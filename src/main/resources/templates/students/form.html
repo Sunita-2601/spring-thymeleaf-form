@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Student Registration</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form th:action="@{/students}" th:object="${student}" method="post">
+
+  <label>Roll Number:</label>
+  <input type="text" th:field="*{rollNumber}">
+  <span th:if="${#fields.hasErrors('rollNumber')}"
+        th:errors="*{rollNumber}"></span>
+  <br><br>
+
+  <label>First Name:</label>
+  <input type="text" th:field="*{firstName}">
+  <span th:if="${#fields.hasErrors('firstName')}"
+        th:errors="*{firstName}"></span>
+  <br><br>
+
+  <label>Last Name:</label>
+  <input type="text" th:field="*{lastName}">
+  <br><br>
+
+  <label>Email:</label>
+  <input type="email" th:field="*{email}">
+  <span th:if="${#fields.hasErrors('email')}"
+        th:errors="*{email}"></span>
+  <br><br>
+
+  <label>Department:</label>
+  <input type="text" th:field="*{department}">
+  <span th:if="${#fields.hasErrors('department')}"
+        th:errors="*{department}"></span>
+  <br><br>
+
+  <label>Year:</label>
+  <input type="number" th:field="*{year}">
+  <span th:if="${#fields.hasErrors('year')}"
+        th:errors="*{year}"></span>
+  <br><br>
+
+  <button type="submit">Register Student</button>
+
+</form>
+
+</body>
+</html>

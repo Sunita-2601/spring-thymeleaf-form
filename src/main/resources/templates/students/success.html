@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Success</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Student Registration Successful</h2>
+
+<p th:if="${message}" th:text="${message}"></p>
+
+<a th:href="@{/students}">View All Students</a>
+<br><br>
+<a th:href="@{/students/new}">Register Another Student</a>
+
+</body>
+</html>
